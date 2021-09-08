@@ -21,7 +21,7 @@
 #curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 #Install Go
-wget https://golang.org/dl/go1.<VERSION_NUMBER>.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.<VERSION_NUMBER>.linux-amd64.tar.gz
+curl -O https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
 echo "export GOPATH=~/.go" >> ~/.profile
