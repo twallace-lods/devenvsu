@@ -6,13 +6,16 @@
 #sudo dpkg -i packages-microsoft-prod.deb
 #rm packages-microsoft-prod.deb
 
-#install SDK
+#install .NET SDK
 #sudo apt-get update; \
 #  sudo apt-get install -y apt-transport-https && \
 #  sudo apt-get update && \
 #  sudo apt-get install -y dotnet-sdk-5.0
 
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
+#Install AWS CLI
+#curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#unzip awscliv2.zip
+#sudo ./aws/install
 
+#Install Azure CLI
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
