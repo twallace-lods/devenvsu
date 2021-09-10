@@ -1,8 +1,6 @@
 #Install pre-reqs
 sudo apt update
-sudo apt install -y wget
-sudo apt install -y gnupg
-sudo apt install -y zip unzip
+sudo apt install -y wget gnupg zip unzip
 
 #Install PIP
 sudo apt install -y python3-pip
