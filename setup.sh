@@ -23,7 +23,7 @@ sudo apt-get update; \
 
 #Install MySQL CLI
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.19-1_all.deb
-dpkg -i mysql-apt-config_0.8.19-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.19-1_all.deb
 sudo apt update
 sudo apt install -y mysql-client
 
@@ -50,11 +50,35 @@ echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main" | sudo
 sudo apt update
 sudo apt install -y mongodb-mongosh
 
+#Install SQL Server tools
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+sudo apt-get update 
+sudo apt-get install mssql-tools unixodbc-dev
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+
 #install extensions
-code-server --install-extension ms-python.python
-code-server --install-extension ms-vscode.vscode-node-azure-pack
+
 code-server --install-extension amazonwebservices.aws-toolkit-vscode
+code-server --install-extension christian-kohler.npm-intellisense
+code-server --install-extension ms-azuretools.vscode-azureappservice
+code-server --install-extension ms-azuretools.vscode-azurefunctions
+code-server --install-extension ms-azuretools.vscode-azurestorage
+code-server --install-extension ms-azuretools.vscode-cosmosdb
+code-server --install-extension ms-azuretools.vscode-docker
 code-server --install-extension ms-dotnettools.csharp
+code-server --install-extension ms-python.python
+code-server --install-extension ms-vscode.azure-account
+code-server --install-extension ms-vscode.azurecli
 code-server --install-extension ms-vscode.cpptools
-code-server --install-extension golang.go
-code-server --install-extension mtxr.sqltools
+code-server --install-extension ms-vscode.node-debug2
+code-server --install-extension ms-vscode.vscode-node-azure-pack
+code-server --install-extension redhat.vscode-yaml
+
+
+
+#Clear history and close terminal
+sudo -i 
+cat /dev/null > /home/*/.bash_history 
+cat /dev/null > /root/.bash_history && history -c && exit 
+history -c && exit
